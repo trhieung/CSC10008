@@ -1,0 +1,32 @@
+[
+    {
+        "bank_name": "Vietcombank",
+        "url_exchange_rate_get": "https://vapi.vnappmob.com/api/v2/exchange_rate/vcb",
+        "url_exchange_rate_post": ""
+    },
+    {
+        "bank_name": "Vietinbank",
+        "url_exchange_rate_get": "https://vapi.vnappmob.com/api/v2/exchange_rate/ctg",
+        "url_exchange_rate_post": ""
+    },
+    {
+        "bank_name": "Techcombank",
+        "url_exchange_rate_get": "https://vapi.vnappmob.com/api/v2/exchange_rate/tcb",
+        "url_exchange_rate_post": ""
+    },
+    {
+        "bank_name": "BIDV",
+        "url_exchange_rate_get": "https://vapi.vnappmob.com/api/v2/exchange_rate/bid",
+        "url_exchange_rate_post": ""
+    },
+    {
+        "bank_name": "Sacombank",
+        "url_exchange_rate_get": "https://vapi.vnappmob.com/api/v2/exchange_rate/stb",
+        "url_exchange_rate_post": ""
+    },
+    {
+        "bank_name": "SBV",
+        "url_exchange_rate_get": "https://vapi.vnappmob.com/api/v2/exchange_rate/sbv",
+        "url_exchange_rate_post": ""
+    }
+]
