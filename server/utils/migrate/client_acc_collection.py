@@ -24,7 +24,7 @@ def migrate_data(conn_str: str):
         db['client_addr'].delete_many({})
 
         # Read the JSON file
-        with open('server\storage\client\client_addr.json') as f:
+        with open('server\storage\data\client_addr.json') as f:
             data = json.load(f)
 
         # Insert the JSON data into the collection

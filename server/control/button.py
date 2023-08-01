@@ -1,11 +1,31 @@
 from  MainWindow import Ui_ServerWindow
 import pymongo
+import os
+import sys
+import threading
+
+# Get the path of the current directory
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Get the path of os.pth by joining it with the current directory
+os_path_file = os.path.join(current_dir, "server")
+
+# Check if the os.pth file exists
+if os.path.exists(os_path_file):
+    # Read the content of os.pth and add each directory to sys.path
+    with open(os_path_file, "r") as file:
+        for line in file:
+            path = line.strip()
+            if path not in sys.path:
+                sys.path.append(path)
+
+from server import server_main
 
 class ButtonControl(Ui_ServerWindow):
     
     def __init__(self) -> None:
         super().__init__()
-        self.login_status = False
+        self.sock_thread = None
     
     def hide_all_frame(self) -> None:
         self.frame_about.hide()
@@ -51,7 +71,10 @@ class ButtonControl(Ui_ServerWindow):
 
             try:
                 self.frame_login.hide()
-                self.frame_home.raise_()
+                self.frame_about.raise_()
+                self.sock_thread = threading.Thread(target=server_main)
+                self.sock_thread.daemon = True
+                self.sock_thread.start()
             except:
                 print("No hosts found")
 
@@ -63,8 +86,7 @@ class ButtonControl(Ui_ServerWindow):
         pwd = self.lineEdit_pwd.text()
         
         connect_str = f"mongodb+srv://{username}:{pwd}@csc10008.tipkf6n.mongodb.net/" # create string to connect to mongdb
-        login_status = get_hosts(connect_str)
-        return login_status
+        get_hosts(connect_str)
 
     def button_handel(self):
         self.button_home.clicked.connect(self.home_func)

@@ -1,0 +1,34 @@
+git credential-manager reject https://github.com
+git config --global user.name "trhieung"
+git config --global user.email "nthieu.ngtr@gmail.com"
+
+
+C:/ProgramData/Anaconda3/Scripts/activate
+conda activate csc10008
+python server/manage.py
+conda info --env
+conda create --name <name> python=3.9
+
+pip install pymongo[srv]
+pip install python-dotenv
+
+#conda env remove -n <name>
+
+pip freeze > requirements.txt
+
+----------------------
+#pyqt5
+pyuic5 –x "filename".ui –o "filename".py
+
+pyuic5 -o server/MainWindow.py server/utils/MainWindow.ui
+pyuic5 -o server/utils/test.py server/utils/MainWindow.ui
+
+-----------------------
+db_username = csc10008
+db_pwd = abcd1234
+
+background-color: rgb(200, 255, 255);
+border-width: 1;
+border-radius: 10;
+border-style: solid;
+border-color: rgb(10, 10, 10)
